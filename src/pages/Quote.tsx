@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, Upload, FileText, Calculator, Check, ArrowRight } from 'lucide-react';
+import { Phone, Mail, FileText, Calculator, Check, ArrowRight } from 'lucide-react';
 
 const Quote = () => {
   const [step, setStep] = useState(1);
@@ -124,7 +124,7 @@ const Quote = () => {
                 timeline: '', budget: '', message: '', urgent: false,
               });
             }}
-            className="bg-[#B8860B] text-white px-6 py-3 rounded font-medium hover:bg-[#9A7209] transition-colors"
+            className="bg-[#000066] text-white px-6 py-3 rounded font-medium hover:bg-[#000050] transition-colors"
           >
             Submit Another Request
           </button>
@@ -136,7 +136,7 @@ const Quote = () => {
   return (
     <div>
       {/* Header */}
-      <section className="bg-gray-900 py-16 lg:py-24">
+      <section className="bg-[#000066] py-16 lg:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="fade-in">
             <span className="text-[#B8860B] font-medium text-sm uppercase tracking-wider">
@@ -161,7 +161,7 @@ const Quote = () => {
               <div key={stepNumber} className="flex items-center">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
                   step >= stepNumber
-                    ? 'bg-[#B8860B] text-white'
+                    ? 'bg-[#000066] text-white'
                     : 'bg-gray-300 text-gray-600'
                 }`}>
                   {stepNumber}
@@ -175,7 +175,7 @@ const Quote = () => {
                 </span>
                 {stepNumber < 3 && (
                   <div className={`w-12 h-0.5 ml-4 ${
-                    step > stepNumber ? 'bg-[#B8860B]' : 'bg-gray-300'
+                    step > stepNumber ? 'bg-[#000066]' : 'bg-gray-300'
                   }`} />
                 )}
               </div>
@@ -212,7 +212,7 @@ const Quote = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -227,7 +227,7 @@ const Quote = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -242,7 +242,7 @@ const Quote = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                         placeholder="+233 XX XXX XXXX"
                       />
                     </div>
@@ -256,7 +256,7 @@ const Quote = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                         placeholder="Your Company"
                       />
                     </div>
@@ -286,7 +286,7 @@ const Quote = () => {
                         value={formData.service}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                       >
                         <option value="">Select a service</option>
                         {services.map((service) => (
@@ -304,7 +304,7 @@ const Quote = () => {
                         value={formData.projectType}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                       >
                         <option value="">Select project type</option>
                         {projectTypes.map((type) => (
@@ -321,7 +321,7 @@ const Quote = () => {
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                       >
                         <option value="">Select budget range</option>
                         {budgetRanges.map((range) => (
@@ -338,7 +338,7 @@ const Quote = () => {
                         name="timeline"
                         value={formData.timeline}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                       >
                         <option value="">Select timeline</option>
                         {timelines.map((timeline) => (
@@ -356,7 +356,7 @@ const Quote = () => {
                         name="quantity"
                         value={formData.quantity}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                         placeholder="e.g., 50 sheets of 18mm plywood, 4x8 feet"
                       />
                     </div>
@@ -370,7 +370,7 @@ const Quote = () => {
                         value={formData.specifications}
                         onChange={handleChange}
                         rows={4}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors resize-none"
                         placeholder="Describe your specific requirements, quality standards, finishing needs, etc."
                       />
                     </div>
@@ -400,7 +400,7 @@ const Quote = () => {
                         value={formData.message}
                         onChange={handleChange}
                         rows={5}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors resize-none"
                         placeholder="Please include any additional information that would help us provide an accurate quote..."
                       />
                     </div>
@@ -412,7 +412,7 @@ const Quote = () => {
                           name="urgent"
                           checked={formData.urgent}
                           onChange={handleChange}
-                          className="mt-1 h-4 w-4 text-[#B8860B] focus:ring-[#B8860B] border-gray-300 rounded"
+                          className="mt-1 h-4 w-4 text-[#B8860B] focus:ring-[#08085E] border-gray-300 rounded"
                         />
                         <div>
                           <label className="block font-medium text-gray-700">
@@ -465,7 +465,7 @@ const Quote = () => {
                     disabled={!isStepValid()}
                     className={`ml-auto flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors ${
                       isStepValid()
-                        ? 'bg-[#B8860B] text-white hover:bg-[#9A7209]'
+                        ? 'bg-[#000066] text-white hover:bg-[#000050]'
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
                   >
@@ -475,7 +475,7 @@ const Quote = () => {
                 ) : (
                   <button
                     type="submit"
-                    className="ml-auto flex items-center gap-2 bg-[#B8860B] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#9A7209] transition-colors"
+                    className="ml-auto flex items-center gap-2 bg-[#000066] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#000050] transition-colors"
                   >
                     <Calculator size={18} />
                     Submit Quote Request
@@ -488,7 +488,7 @@ const Quote = () => {
       </section>
 
       {/* Contact Info */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-16 bg-[#000066]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <h3 className="text-2xl font-bold mb-6">Need Help or Have Questions?</h3>
           <p className="text-gray-300 mb-8">

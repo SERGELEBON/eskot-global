@@ -1,5 +1,7 @@
+
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Phone, Award, Users, Truck } from 'lucide-react';
+import { ArrowRight, Check, Phone, Award, Users, Truck, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { getAllServices } from '../data/services';
 import type { Feature } from '../types';
 
@@ -31,23 +33,106 @@ const Home = () => {
     'Serving local and international markets',
   ];
 
+  // Hero images slider
+  const heroImages = [
+    {
+      src: '/images/hero_left_panel.jpg',
+      alt: 'Woodworking craftsmanship'
+    },
+    {
+      src: '/images/materials_left.jpg',
+      alt: 'Quality materials and plywood'
+    },
+    {
+      src: '/images/craft_left.jpg',
+      alt: 'Expert craftsmanship'
+    },
+    {
+      src: '/images/precision_left.jpg',
+      alt: 'Precision manufacturing'
+    }
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
+
+  const goToSlide = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
+  const goToPrevSlide = () => {
+    setCurrentImageIndex(currentImageIndex === 0 ? heroImages.length - 1 : currentImageIndex - 1);
+  };
+
+  const goToNextSlide = () => {
+    setCurrentImageIndex(currentImageIndex === heroImages.length - 1 ? 0 : currentImageIndex + 1);
+  };
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gray-900 overflow-hidden">
+      <section className="relative bg-[#000066] overflow-hidden">
+        {/* Image Slider */}
         <div className="absolute inset-0">
-          <img
-            src="/images/hero_left_panel.jpg"
-            alt="Woodworking craftsmanship"
-            className="w-full h-full object-cover opacity-40"
-            loading="eager"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent" />
+          {heroImages.map((image, index) => (
+            <img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              className={`w-full h-full object-cover transition-opacity duration-1000 absolute inset-0 ${
+                index === currentImageIndex ? 'opacity-60' : 'opacity-0'
+              }`}
+              loading={index === 0 ? "eager" : "lazy"}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#000066]/70 via-[#000066]/50 to-transparent" />
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={goToPrevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors backdrop-blur-sm"
+          aria-label="Previous image"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button
+          onClick={goToNextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors backdrop-blur-sm"
+          aria-label="Next image"
+        >
+          <ChevronRight size={24} />
+        </button>
+
+        {/* Dots Indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                index === currentImageIndex
+                  ? 'bg-[#B8860B]'
+                  : 'bg-white/50 hover:bg-white/70'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-[#B8860B]/20 text-[#B8860B] px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-[#00AEEF]/20 text-[#00AEEF] px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Award size={16} />
               Registered Member - Ghana Chamber of Commerce
             </div>
@@ -63,7 +148,7 @@ const Home = () => {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 bg-[#B8860B] text-white px-6 py-3 rounded font-medium hover:bg-[#9A7209] transition-colors btn-transition"
+                className="inline-flex items-center gap-2 bg-[#000066] text-white px-6 py-3 rounded font-medium hover:bg-[#000050] transition-colors btn-transition"
               >
                 Our Services
                 <ArrowRight size={18} />
@@ -116,7 +201,7 @@ const Home = () => {
               />
             </div>
             <div className="fade-in">
-              <span className="text-[#B8860B] font-medium text-sm uppercase tracking-wider">
+              <span className="text-[#00AEEF] font-medium text-sm uppercase tracking-wider">
                 About Us
               </span>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3 mb-6">
@@ -158,7 +243,7 @@ const Home = () => {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 fade-in">
-            <span className="text-[#B8860B] font-medium text-sm uppercase tracking-wider">
+            <span className="text-[#00AEEF] font-medium text-sm uppercase tracking-wider">
               Our Services
             </span>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-3">
@@ -202,7 +287,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded font-medium hover:bg-gray-800 transition-colors btn-transition"
+              className="inline-flex items-center gap-2 bg-[#000066] text-white px-6 py-3 rounded font-medium hover:bg-[#000050] transition-colors btn-transition"
             >
               View All Services
               <ArrowRight size={18} />
@@ -212,7 +297,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-[#B8860B]">
+      <section className="py-16 lg:py-24 bg-[#000066]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Start Your Project?

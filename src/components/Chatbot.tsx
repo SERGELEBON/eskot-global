@@ -169,45 +169,6 @@ const Chatbot = () => {
     }
   };
 
-  const handleQuestionClick = (question: string) => {
-    addMessage(question, false);
-
-    // Find answer in services
-    for (const serviceKey in chatbotData.services) {
-      const service = chatbotData.services[serviceKey];
-      const found = service.commonQuestions.find(q => q.question === question);
-      if (found) {
-        showTyping();
-        setTimeout(() => {
-          addMessage(found.answer, true);
-          setTimeout(() => {
-            addMessage(
-              "Need more details? Let's continue on WhatsApp where our team can assist you personally!",
-              true,
-              ['Continue on WhatsApp', 'Ask another question']
-            );
-          }, 1000);
-        }, 1500);
-        return;
-      }
-    }
-
-    // Find answer in general questions
-    const generalAnswer = chatbotData.generalQuestions.find(q => q.question === question);
-    if (generalAnswer) {
-      showTyping();
-      setTimeout(() => {
-        addMessage(generalAnswer.answer, true);
-        setTimeout(() => {
-          addMessage(
-            "Have more questions? Our team is ready to help you on WhatsApp!",
-            true,
-            ['Continue on WhatsApp', 'Ask another question']
-          );
-        }, 1000);
-      }, 1500);
-    }
-  };
 
   const handleOptionClick = (option: string) => {
     addMessage(option, false);

@@ -50,10 +50,10 @@ const Contact = () => {
   return (
     <div>
       {/* Page Header */}
-      <section className="bg-gray-900 py-16 lg:py-24">
+      <section className="bg-[#000066] py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
-            <span className="text-[#B8860B] font-medium text-sm uppercase tracking-wider">
+            <span className="text-[#00AEEF] font-medium text-sm uppercase tracking-wider">
               Contact Us
             </span>
             <h1 className="text-4xl lg:text-5xl font-bold text-white mt-4">
@@ -129,14 +129,14 @@ const Contact = () => {
               </p>
 
               {submitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Check size={24} className="text-green-600" />
+                <div className="bg-[#00AEEF]/10 border border-[#00AEEF]/30 rounded-lg p-6 text-center">
+                  <div className="w-12 h-12 bg-[#00AEEF]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Check size={24} className="text-[#00AEEF]" />
                   </div>
-                  <h3 className="font-semibold text-green-800 mb-2">
+                  <h3 className="font-semibold text-[#00AEEF] mb-2">
                     Message Sent!
                   </h3>
-                  <p className="text-green-600 text-sm">
+                  <p className="text-[#00AEEF] text-sm">
                     Thank you for contacting us. We'll respond within 24 hours.
                   </p>
                 </div>
@@ -153,7 +153,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -167,7 +167,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -183,7 +183,7 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                         placeholder="+233 XX XXX XXXX"
                       />
                     </div>
@@ -196,7 +196,7 @@ const Contact = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                         placeholder="Your Company"
                       />
                     </div>
@@ -210,7 +210,7 @@ const Contact = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, index) => (
@@ -231,14 +231,14 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8860B] focus:border-[#B8860B] outline-none transition-colors resize-none"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08085E] focus:border-[#08085E] outline-none transition-colors resize-none"
                       placeholder="Tell us about your project..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#B8860B] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#9A7209] transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-[#000066] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#000050] transition-colors flex items-center justify-center gap-2"
                   >
                     <Send size={18} />
                     Send Message
@@ -269,7 +269,7 @@ const Contact = () => {
               </div>
 
               {/* Quick Contact */}
-              <div className="fade-in bg-[#B8860B] rounded-lg p-6 text-white">
+              <div className="fade-in bg-[#000066] rounded-lg p-6 text-white">
                 <h3 className="font-semibold text-lg mb-4">Prefer to Call?</h3>
                 <p className="text-white/80 text-sm mb-4">
                   Our team is available during business hours to answer your questions.

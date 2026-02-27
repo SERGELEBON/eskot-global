@@ -49,7 +49,7 @@ const ServiceDetail = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gray-900 overflow-hidden">
+      <section className="relative bg-[#000066] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={service.image}
@@ -57,7 +57,7 @@ const ServiceDetail = () => {
             className="w-full h-full object-cover opacity-30"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/90 to-gray-900/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#000066] via-[#000066]/90 to-[#000066]/70" />
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -161,7 +161,7 @@ const ServiceDetail = () => {
               </div>
 
               {/* Contact CTA */}
-              <div className="fade-in bg-[#B8860B] rounded-lg p-6 text-white">
+              <div className="fade-in bg-[#000066] rounded-lg p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">Need a Quote?</h3>
                 <p className="text-white/80 text-sm mb-4">
                   Contact us today for pricing and availability.
@@ -226,7 +226,7 @@ const ServiceDetail = () => {
             </Link>
             <Link
               to="/quote"
-              className="inline-flex items-center gap-2 bg-[#B8860B] text-white px-6 py-3 rounded font-medium hover:bg-[#9A7209] transition-colors btn-transition"
+              className="inline-flex items-center gap-2 bg-[#000066] text-white px-6 py-3 rounded font-medium hover:bg-[#000050] transition-colors btn-transition"
             >
               Get a Quote
               <ArrowRight size={18} />

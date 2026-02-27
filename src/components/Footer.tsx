@@ -17,13 +17,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#000066] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+              <div className="w-14 h-14 bg-white rounded-full overflow-hidden flex items-center justify-center">
                 <img
                   src="/logoeskot.png"
                   alt="ESKOT GLOBAL"

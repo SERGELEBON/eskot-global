@@ -85,10 +85,10 @@ const About = () => {
   return (
     <div>
       {/* Page Header */}
-      <section className="bg-gray-900 py-16 lg:py-24">
+      <section className="bg-[#000066] py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
-            <span className="text-[#B8860B] font-medium text-sm uppercase tracking-wider">
+            <span className="text-[#00AEEF] font-medium text-sm uppercase tracking-wider">
               About Us
             </span>
             <h1 className="text-4xl lg:text-5xl font-bold text-white mt-4">
@@ -108,9 +108,9 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="fade-in">
               <img
-                src="/images/scale_top_left.jpg"
-                alt="Our manufacturing facility"
-                className="rounded-lg shadow-xl w-full"
+                src="/skot4.jpg"
+                alt="ESKOT GLOBAL manufacturing facility and operations"
+                className="rounded-lg shadow-xl w-full h-96 object-cover"
               />
             </div>
             <div className="fade-in">
@@ -159,7 +159,7 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-16 bg-[#000066]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -183,7 +183,7 @@ const About = () => {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 fade-in">
-            <span className="text-[#B8860B] font-medium text-sm uppercase tracking-wider">
+            <span className="text-[#00AEEF] font-medium text-sm uppercase tracking-wider">
               Our Capabilities
             </span>
             <h2 className="text-3xl font-bold text-gray-900 mt-3">
@@ -225,7 +225,7 @@ const About = () => {
                 <div className="w-16 h-16 bg-[#B8860B]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <capability.icon size={28} className="text-[#B8860B]" />
                 </div>
-                <h3 className="font-semibold text-lg mb-3">{capability.title}</h3>
+                <h3 className="font-semibold text-lg mb-3 text-[#B8860B]">{capability.title}</h3>
                 <p className="text-gray-600 text-sm">{capability.description}</p>
               </div>
             ))}
@@ -237,7 +237,7 @@ const About = () => {
       <section className="py-16 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 fade-in">
-            <span className="text-[#B8860B] font-medium text-sm uppercase tracking-wider">
+            <span className="text-[#00AEEF] font-medium text-sm uppercase tracking-wider">
               Our Values
             </span>
             <h2 className="text-3xl font-bold text-gray-900 mt-3">
@@ -254,7 +254,7 @@ const About = () => {
                 <div className="w-16 h-16 bg-[#B8860B]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <value.icon size={32} className="text-[#B8860B]" />
                 </div>
-                <h3 className="font-semibold text-xl mb-3">{value.title}</h3>
+                <h3 className="font-semibold text-xl mb-3 text-[#B8860B]">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
@@ -266,7 +266,7 @@ const About = () => {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 fade-in">
-            <span className="text-[#B8860B] font-medium text-sm uppercase tracking-wider">
+            <span className="text-[#00AEEF] font-medium text-sm uppercase tracking-wider">
               Our Journey
             </span>
             <h2 className="text-3xl font-bold text-gray-900 mt-3">
@@ -295,7 +295,7 @@ const About = () => {
                           {milestone.year}
                         </span>
                       </div>
-                      <h3 className="font-semibold text-lg mb-2">{milestone.title}</h3>
+                      <h3 className="font-semibold text-lg mb-2 text-[#B8860B]">{milestone.title}</h3>
                       <p className="text-gray-600 text-sm">{milestone.description}</p>
                     </div>
                   </div>
@@ -329,7 +329,7 @@ const About = () => {
                       <Shield size={20} className="text-[#B8860B]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1">Company Registration</h4>
+                      <h4 className="font-semibold mb-1 text-[#B8860B]">Company Registration</h4>
                       <p className="text-gray-600 text-sm">
                         Registered under Companies Code 1963 (Act 179) with the 
                         Registrar General Department (R.G.D)
@@ -341,7 +341,7 @@ const About = () => {
                       <Award size={20} className="text-[#B8860B]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1">Chamber of Commerce</h4>
+                      <h4 className="font-semibold mb-1 text-[#B8860B]">Chamber of Commerce</h4>
                       <p className="text-gray-600 text-sm">
                         Registered member of Ghana National Chamber of Commerce and Industry
                       </p>
@@ -352,7 +352,7 @@ const About = () => {
                       <MapPin size={20} className="text-[#B8860B]" />
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1">Location</h4>
+                      <h4 className="font-semibold mb-1 text-[#B8860B]">Location</h4>
                       <p className="text-gray-600 text-sm">
                         Accra Dome Pillar 2, Ghana
                       </p>

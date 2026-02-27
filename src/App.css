@@ -77,12 +77,12 @@ select:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #B8860B;
+  background: #08085E;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9A7209;
+  background: #000066;
 }
 
 /* --------------------------------------------
@@ -132,7 +132,7 @@ select:focus {
 
 /* Focus visible for keyboard navigation */
 :focus-visible {
-  outline: 2px solid #B8860B;
+  outline: 2px solid #08085E;
   outline-offset: 2px;
 }
 

@@ -8,7 +8,7 @@ const Services = () => {
   return (
     <div>
       {/* Page Header */}
-      <section className="bg-gray-900 py-16 lg:py-24">
+      <section className="bg-[#000066] py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
             <span className="text-[#B8860B] font-medium text-sm uppercase tracking-wider">
@@ -62,14 +62,14 @@ const Services = () => {
                   <ul className="space-y-2 mb-8">
                     {service.features.slice(0, 4).map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-center gap-3">
-                        <div className="w-1.5 h-1.5 bg-[#B8860B] rounded-full flex-shrink-0" />
+                        <div className="w-1.5 h-1.5 bg-[#000066] rounded-full flex-shrink-0" />
                         <span className="text-gray-700">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Link
                     to={`/services/${service.id}`}
-                    className="inline-flex items-center gap-2 bg-[#B8860B] text-white px-6 py-3 rounded font-medium hover:bg-[#9A7209] transition-colors btn-transition"
+                    className="inline-flex items-center gap-2 bg-[#000066] text-white px-6 py-3 rounded font-medium hover:bg-[#000050] transition-colors btn-transition"
                   >
                     Learn More
                     <ArrowRight size={18} />
@@ -94,14 +94,14 @@ const Services = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/quote"
-              className="inline-flex items-center gap-2 bg-[#B8860B] text-white px-8 py-3 rounded font-medium hover:bg-[#9A7209] transition-colors btn-transition"
+              className="inline-flex items-center gap-2 bg-[#000066] text-white px-8 py-3 rounded font-medium hover:bg-[#000050] transition-colors btn-transition"
             >
               Get a Quote
               <ArrowRight size={18} />
             </Link>
             <a
               href="tel:0558201389"
-              className="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 px-8 py-3 rounded font-medium hover:bg-gray-900 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 px-8 py-3 rounded font-medium hover:bg-[#000066] hover:text-white transition-colors"
             >
               <Phone size={18} />
               Call Us

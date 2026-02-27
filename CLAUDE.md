@@ -62,7 +62,7 @@ src/
 - **Path aliases**: `@/` mapped to `src/` for clean imports
 
 ### Business Domain
-This is a website for Kings Group, a building materials supplier in Ghana specializing in:
+This is a website for ESKOT GLOBAL, a building materials supplier in Ghana specializing in:
 - Plywood and marine boards
 - Melamine boards and panels
 - Furniture accessories and hardware
@@ -82,3 +82,58 @@ This is a website for Kings Group, a building materials supplier in Ghana specia
 - Custom CSS animations defined in App.css for fade-in effects
 - Service data is strongly typed with comprehensive interfaces
 - Path-based routing with service detail pages using URL parameters
+
+## Brand Colors
+
+The project uses ESKOT GLOBAL's brand color scheme:
+- **Primary Blue (Bleu Nuit)**: `#08085E` or `#000066` - Main brand color
+- **Hover/Dark Blue**: `#000066` - Darker variant for hover states
+- **Accent Cyan**: `#00AEEF` or `#29ABE2` - For highlights and accents
+- **Previous Orange**: `#B8860B` - Used for text visibility and professionalism
+
+## Key Technical Concepts
+
+### Animation System
+The site uses a custom IntersectionObserver-based animation system in App.tsx:
+- Elements with `.fade-in` class animate when scrolling into view
+- Animation observer re-initializes on route changes using `useLocation` hook
+- App is split into `App` (router wrapper) and `AppContent` (main content) to enable route detection
+
+### Form Architecture
+- Multi-step forms using React Hook Form with Zod validation
+- Quote system with file upload and WhatsApp integration
+- Comprehensive error handling and field validation
+
+### Service Data Architecture
+- Single source of truth in `/src/data/services.ts`
+- Lightweight `NavService` type for navigation
+- Full `Service` interface for detailed pages
+- Dynamic routing with service detail pages using URL parameters
+
+### Chatbot System
+- Conversational flow with service-specific Q&A
+- WhatsApp integration for transaction completion
+- Predefined conversation paths and automatic redirects
+
+## Common Maintenance Tasks
+
+### Updating Service Information
+- Edit `/src/data/services.ts` for service content
+- Update service images in `/public/images/`
+- Modify navigation in `NavService` array if adding/removing services
+
+### Color Scheme Updates
+- Primary colors defined globally in components
+- Search for hex codes (`#08085E`, `#00AEEF`, etc.) to update consistently
+- Test hover states and accessibility when changing colors
+
+### Animation Debugging
+- Check IntersectionObserver setup in App.tsx if animations don't trigger
+- Ensure `.fade-in` class is applied to elements that should animate
+- Verify route change detection is working with useLocation dependency
+
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
