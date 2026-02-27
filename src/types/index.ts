@@ -47,3 +47,45 @@ export interface FAQ {
   q: string;
   a: string;
 }
+
+// Product types for gallery and cart
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
+  serviceId: string;
+  inStock: boolean;
+  likes: number;
+  views: number;
+  specifications?: { label: string; value: string }[];
+}
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
+}
+
+export interface CartContextType {
+  items: CartItem[];
+  totalItems: number;
+  totalPrice: number;
+  addItem: (product: Product, quantity?: number) => void;
+  removeItem: (productId: string) => void;
+  updateQuantity: (productId: string, quantity: number) => void;
+  clearCart: () => void;
+  isInCart: (productId: string) => boolean;
+}
+
+// Gallery filter types
+export interface GalleryFilter {
+  category: string;
+  serviceId?: string;
+  priceRange?: {
+    min: number;
+    max: number;
+  };
+  inStock?: boolean;
+}

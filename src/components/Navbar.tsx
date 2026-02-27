@@ -1,12 +1,15 @@
 import { useState, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ShoppingCart, Images } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 import { navServices } from '../data/services';
+import { useCart } from '@/hooks/useCart';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+  const { totalItems } = useCart();
 
   // Memoized active check for better performance
   const isActive = useCallback(
@@ -106,12 +109,37 @@ const Navbar = () => {
             </div>
 
             <Link
+              to="/shop"
+              className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                isActive('/shop') ? 'text-[#B8860B]' : 'text-gray-700 hover:text-[#B8860B]'
+              }`}
+            >
+              <Images size={16} />
+              Shop
+            </Link>
+
+            <Link
               to="/contact"
               className={`text-sm font-medium transition-colors ${
                 isActive('/contact') ? 'text-[#B8860B]' : 'text-gray-700 hover:text-[#B8860B]'
               }`}
             >
               Contact
+            </Link>
+
+            {/* Cart Icon */}
+            <Link
+              to="/cart"
+              className={`relative text-sm font-medium transition-colors ${
+                isActive('/cart') ? 'text-[#B8860B]' : 'text-gray-700 hover:text-[#B8860B]'
+              }`}
+            >
+              <ShoppingCart size={20} />
+              {totalItems > 0 && (
+                <Badge className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-[#08085E]">
+                  {totalItems}
+                </Badge>
+              )}
             </Link>
 
             <Link
@@ -179,6 +207,26 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
+            <Link
+              to="/shop"
+              className={`flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                isActive('/shop') ? 'text-[#B8860B] bg-gray-50' : 'text-gray-700 hover:bg-gray-50'
+              }`}
+              onClick={handleNavClick}
+            >
+              <Images size={20} />
+              Shop
+            </Link>
+            <Link
+              to="/cart"
+              className={`flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                isActive('/cart') ? 'text-[#B8860B] bg-gray-50' : 'text-gray-700 hover:bg-gray-50'
+              }`}
+              onClick={handleNavClick}
+            >
+              <ShoppingCart size={20} />
+Cart ({totalItems})
+            </Link>
             <Link
               to="/contact"
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
